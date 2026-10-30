@@ -1,0 +1,24 @@
+{
+  "v": 1,
+  "typ": "manometer.receipt",
+  "sourceId": "nordic-models",
+  "proposalId": "nm-2026-10-29-0412",
+  "receivedTs": 1793266867318,
+  "sealed": true,
+  "payloadSha256": "15cbc47aee797e7f55b6f1b1d734147cc58abc242cfb15f009734f48ec01c8b8",
+  "drand": {
+    "chain": "52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971",
+    "round": 33613012,
+    "opensTs": 1793642400000
+  },
+  "snapshot": {
+    "id": "snap_20261029T094105Z",
+    "root": "6b53b9a0155cd54029ae5bc4e62f0ea070faa060e9cc56a5dddb924961438c16",
+    "ts": 1793266865178,
+    "n": 1458
+  },
+  "referee": "manometer-referee/1",
+  "rid": "r_8c59b1b33806f3ad9c8b1b1b",
+  "keyId": "02d02ca9b91687c8",
+  "sig": "4a26//4pzI0sFp7psBdQAQQiWxPgfKmXpkNoBWhoZToMLHrqznGXRIL7OqKv1P8ZyOpdld9NHNYcY1g8o6dKBQ=="
+}

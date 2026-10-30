@@ -1,0 +1,3 @@
+Sample key, not the referee's key
+publicKey: j59bHsl+1rfCfxFHtkvvGzTWcGU06eLSwrPkvONQNSo=
+keyId: 02d02ca9b91687c8
