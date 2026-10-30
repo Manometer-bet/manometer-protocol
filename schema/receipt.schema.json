@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manometer receipt, contract v1",
+  "type": "object",
+  "required": ["v", "typ", "sourceId", "proposalId", "receivedTs", "sealed", "payloadSha256", "snapshot", "referee", "rid", "keyId", "sig"],
+  "properties": {
+    "v": { "const": 1 },
+    "typ": { "const": "manometer.receipt" },
+    "sourceId": { "type": "string" },
+    "proposalId": { "type": "string" },
+    "receivedTs": { "type": "number", "description": "The millisecond the proposal arrived, on the referee's clock, later backed by the hourly anchor." },
+    "sealed": { "type": "boolean" },
+    "payloadSha256": { "type": "string", "description": "SHA-256 of the ciphertext, or of the canonical proposal if sent in clear." },
+    "drand": { "type": ["object", "null"], "properties": { "chain": { "type": "string" }, "round": { "type": "number" }, "opensTs": { "type": "number" } } },
+    "snapshot": { "type": "object", "properties": { "id": { "type": "string" }, "root": { "type": "string" }, "ts": { "type": "number" }, "n": { "type": "number" } } },
+    "referee": { "type": "string" },
+    "rid": { "type": "string", "description": "r_ + first 24 hex of SHA-256 over the canonical receipt without rid, keyId, sig." },
+    "keyId": { "type": "string", "description": "First 16 hex of SHA-256 over the raw Ed25519 public key." },
+    "sig": { "type": "string", "description": "Base64 Ed25519 signature over the canonical receipt without sig." }
+  }
+}

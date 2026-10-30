@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manometer proposal, contract v1",
+  "type": "object",
+  "required": ["proposalId", "sourceId", "sport", "mkt", "sel", "eventIdentity", "fairOdds", "devigMethod", "minOdds", "tsCreated", "ttlMs"],
+  "properties": {
+    "proposalId": { "type": "string", "pattern": "^[A-Za-z0-9_.:-]{1,120}$", "description": "Idempotency key: exactly one receipt per id, ever." },
+    "sourceId": { "type": "string", "pattern": "^[A-Za-z0-9_.:-]{1,120}$" },
+    "sport": { "enum": ["fb", "basket", "tennis", "cs2"] },
+    "mkt": { "type": "string", "description": "fb: 1x2, ah, total. basket: ml, spread, total. tennis: ml, setHc, gamesHc, gamesTotal. cs2: ml, mapHc, mapsTotal, mapWinner, roundsAh, roundsTotal." },
+    "scope": { "type": "string", "description": "match (default), or map1, map2, map3 for cs2 map markets." },
+    "sel": { "type": "string", "description": "1, X, 2, or home, away, or over, under, depending on the market." },
+    "line": { "type": ["number", "null"], "description": "Required for handicap and total markets, not allowed otherwise." },
+    "eventIdentity": {
+      "type": "object",
+      "required": ["home", "away", "startsTs"],
+      "properties": { "home": { "type": "string" }, "away": { "type": "string" }, "league": { "type": "string" }, "startsTs": { "type": "number", "description": "Kick-off, milliseconds since the epoch. Unknown kick-off is blocked." } }
+    },
+    "fairOdds": { "type": "number", "exclusiveMinimum": 1 },
+    "devigMethod": { "type": "string", "description": "How fairOdds was derived, e.g. shin." },
+    "minOdds": { "type": "number", "exclusiveMinimum": 1 },
+    "tsCreated": { "type": "number" },
+    "ttlMs": { "type": "number", "exclusiveMinimum": 0 },
+    "stakeHint": { "type": "number" },
+    "ev": { "type": "number", "description": "Claimed expected value in percent. Compared with the recomputed value (EV honesty)." },
+    "live": { "type": "boolean", "description": "In-play signal. Not scored by the network referee yet." }
+  }
+}
