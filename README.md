@@ -6,7 +6,7 @@ The open contract between signal sources and the Manometer referee: proposals in
 - [schema/](schema/): JSON Schemas for a proposal and a receipt.
 - [examples/](examples/): a sample receipt with its anchor path, signed with a sample key.
 
-Everything here rests on open standards: canonical JSON, Ed25519, RFC 6962 Merkle trees, tlock over drand quicknet, and OpenTimestamps. A second, independent verifier would make the network stronger, and we would link to it. The reference verifier is [manometer-verify](https://github.com/brauler9/manometer-verify).
+Everything here rests on open standards: canonical JSON, Ed25519, RFC 6962 Merkle trees, tlock over drand quicknet, and OpenTimestamps. A second, independent verifier would make the network stronger, and we would link to it. The reference verifier is [manometer-verify](https://github.com/Manometer-bet/manometer-verify).
 
 ## Licence
 
